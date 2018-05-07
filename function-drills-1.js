@@ -13,9 +13,13 @@ function yearOfBirth(age) {
   }
 }
 function whoAmI(name, age) {
-  if (name && age) { 
-    console.log(`Hi, my name is ${name} and I'm ${age} years old.`);
-    console.log(`I was born in ${yearOfBirth(age)}`);
+  if (name && age) {
+    if((typeof name === "string") && (typeof age === "number")) {
+      console.log(`Hi, my name is ${name} and I'm ${age} years old.`);
+      console.log(`I was born in ${yearOfBirth(age)}`);
+    } else {
+      console.error("Name must be a string and age must be a number");
+    }
   } else {
     console.error('Argument not valid');
   }
